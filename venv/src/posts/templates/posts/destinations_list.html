@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="destinations-container">
+    <div class="destinations-header">
+        <h1>DESTINATIONS</h1><br>
+        <h2>Découvrez l'archipel du Cap-Vert</h2>
+    </div>
+
+    {% for destination in destinations %}
+      <div class="destinations-card">
+
+          <img class="card-img-top" src={{destination.thumbnail.url}} alt="Card image cap">
+
+          <div class="destinations-card-body">
+              <h5 class="destinations-card-title"> {{destination.title}}</h5>
+              <p class="destinations-card-text"> {{destination.description|linebreaks|safe|truncatewords:50}}</p>
+          </div>
+
+        <div class="destinations-card-body">
+          <p><a href="{% url 'posts:destinations_detail' destination.slug %}" class="card-link">Lire >></a></p>
+          <a href="https://www.flytap.com/" class="card-link">Réserver un vol >></a>
+        </div>
+      </div>
+    {% endfor %}
+
+      <div class="pagination">
+          <span class="step-links">
+              {% if page_obj.has_previous %}
+                <a href="?page=1"><<  </a>
+                <a href="?page={{ page_obj.previous_page_number }}"><</a>
+              {% endif %}
+
+              <span class="current">
+                  Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+              </span>
+
+              {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">></a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">  >></a>
+              {% endif %}
+          </span>
+      </div>
+  </div>
+{% endblock %}

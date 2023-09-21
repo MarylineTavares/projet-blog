@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="cart">
+        <div class="empty-cart">
+            {% if not user.cart.orders.count %}
+                <h1>Votre panier est vide</h1>
+                <a href="{% url 'shop:books_list' %}">Retourner à la boutique</a>
+        </div>
+
+            {% else %}
+                <form method="POST" action="{% url 'shop:update_quantities' %}">
+                    {% csrf_token %}
+                    {{forms.management_form}}
+                    {% for form in forms %}
+                        <div class="cart-content">
+                            <div class="cart-img">
+                                <img src="{{form.instance.shop.thumbnail.url}}" alt="Image du produit" style="max-width">
+                            </div>
+
+                            <div class="cart-text">
+                                <h1>{{form.instance.shop.title}}</h1>
+                                <p>{{form.instance.shop.price}} €</p>
+                            </div>
+
+                            {{form}}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="update-quantities-btn">Mettre à jour les quantités</button>
+                </form>
+
+                <form action ="{% url 'shop:create_checkout_session' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="continue-btn">Continuer</button>
+                </form>
+            {% endif %}
+    </div>
+{% endblock %}

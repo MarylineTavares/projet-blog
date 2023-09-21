@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="destination-detail-container">
+        <h3>{{destination.title}}</h3>
+        <h2>Dernière mise à jour: {{destination.published}}</h2>
+        <img src="{{destination.thumbnail.url}}" alt="{{destination.title}}">
+        <p>{{destination.description|linebreaks|safe}}</p>
+    </div>
+{% endblock %}

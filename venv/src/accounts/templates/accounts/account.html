@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="account">
+        <div class="account-access">
+            <h1>Accédez à votre compte</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <p>
+                    <input id="email" type="email" name="email" placeholder="E-MAIL"><br><br>
+                </p>
+
+                <p>
+                    <input id="password" type="password" name="password" placeholder="MOT DE PASSE">
+                </p>
+
+                <button type="submit"> Se connecter </button>
+            </form>
+
+            <a href="{% url 'accounts:password-reset' %}">Mot de passe oublié</a>
+        </div>
+
+        <div class="account-creation">
+            <form action="{% url 'accounts:create_account' %}">
+            <h1>Besoin de créer un compte?</h1>
+            <button type="submit"> Inscrivez-vous </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+
