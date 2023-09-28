@@ -1,0 +1,586 @@
+:root {
+    --green:#1C5F4A;
+    --light-green:#DFEBE6;
+    --black:#000000;
+    --dark-grey:#4B4443;
+    --grey:#BDC2C1;
+    --light-grey:#FAFAFA;
+    --light-blue:#7B9DDD;
+    --white: #FDFEFE;
+    --red: #FF3333;
+    --box-shadow: 3px 3px 2px 3px rgba(0,0,0,.1);
+}
+
+* {
+    font-family: Yu Gothic UI Light, sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    transition: all .2s linear;
+}
+
+/* base.html */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behaviour: smooth;
+}
+
+header {
+    position: fixed;
+    top:0; left:0; right:0;
+    background: var(--light-grey);
+    padding: 1rem 5%;
+    display: flex;
+    align: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo{
+    color: var(--green);
+    font-size: 3rem;
+    font-family: Cooper Black;
+    font-weight: bolder;
+}
+
+header .logo i{
+    color: var(--green);
+    font-size: 4rem;
+}
+
+header .navbar {
+list-style-type: none;
+}
+
+header .navbar li {
+    float: left;
+    width: 180px;
+}
+
+header .navbar li a {
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--dark-grey);
+    text-align: center;
+}
+
+header .navbar li a:hover {
+    color: var(--white);
+    background-color: var(--green);
+}
+
+header .navbar li a:link, header .navbar li a:visited {
+    display: block;
+}
+
+header .icons i, header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 5rem;
+    text-align: center;
+    font-size: 24px;
+    color: var(--black);
+    border-radius: 50%;
+    background: var(--light-grey);
+}
+
+header .icons i:hover, header .icons a:hover{
+    color:var(--white);
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+/* home.html */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+}
+
+/* about.html */
+.container-about{
+    margin: 80px 70px 80px;
+}
+
+.container-about h1{
+    text-align: center;
+    font-size: 22px;
+}
+
+.container-about .image{
+    float: left;
+    weight: 300px;
+    height: 400px;
+    margin-right: 20px;
+}
+
+.container-about .text{
+    font-size: 16px;
+    text-align : justify;
+}
+
+/* books_list.html */
+.container-books{
+    margin: 80px 70px 80px;
+}
+
+.header-books{
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../posts/livre.jpg');
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+  padding: 15em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header-books h1{
+    font-size: 35px;
+}
+
+.header-books h2{
+    font-style: italic;
+}
+
+.card-books{
+    display: inline-block;
+    padding: 15px;
+    text-align:center;
+    width: 25rem;
+    height: 44rem;
+    border: 1px solid;
+    border-color: var(--grey);
+    transition: 0.3s;
+    border-radius: 1px;
+    margin-bottom: 20px;
+    margin-left: 22px;
+}
+
+.card-books:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-books img {
+    border-radius: 5px 5px 0 0;
+    wight: 100%;
+    height: 60%;
+    border-bottom: 1px solid;
+    padding: 40px;
+}
+
+.books-card-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    height: 50px;
+}
+
+.books-card-price{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.books-card-body a{
+    font-size: 12px;
+    color: var(--light-blue);
+    font-weight: bolder;
+}
+
+.books-card-body a:hover{
+  border-bottom: 1px solid;
+}
+
+/* books_detail.html */
+.book-detail-container{
+    margin: 80px 70px 80px;
+}
+
+.book-detail-container img{
+    float: left;
+    margin-right: 20px;
+    wight: 100%;
+    height: 500px;
+}
+
+.book-detail-content h2{
+    font-size:32px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.book-detail-content h3{
+    font-size:24px;
+    color: var(--green);
+    font-style: italic;
+}
+
+.book-detail-content a{
+    font-size: 14px;
+    border: 0.5px solid;
+    padding: 3px;
+    width: 135px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.book-detail-content p{
+    margin-top: 40px;
+    font-size: 14px;
+    text-align : justify;
+}
+
+/* destinations_list.html */
+.destinations-container{
+    margin: 80px 70px 80px;
+}
+
+.destinations-header{
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../posts/destinations.jpg');
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+  padding: 16em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.destinations-header h1{
+    font-size: 35px;
+}
+
+.destinations-header h2{
+    font-style: italic;
+}
+
+.destinations-card{
+    display: inline-block;
+    padding: 40px;
+    text-align:center;
+    width: 36rem;
+    height: 40rem;
+    border: 1px solid;
+    border-color: var(--grey);
+    transition: 0.3s;
+    border-radius: 1px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.destinations-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.destinations-card img {
+    wight: 100%;
+    height: 60%;
+}
+
+.destinations-card-body {
+    padding: 5px 20px;
+    text-align : center;
+}
+
+.destinations-card-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.destinations-card-text{
+    font-size: 18px;
+}
+
+.destinations-card-body a{
+    font-size: 12px;
+    color: var(--light-blue);
+    font-weight: bolder;
+}
+
+.destinations-card-body a:hover {
+  border-bottom: 1px solid;
+}
+
+.pagination{
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination a:hover{
+    border-bottom: 1px solid;
+    color: var(--red);
+}
+/* destinations_detail.html */
+.destination-detail-container{
+    margin: 80px 70px 80px;
+    text-align: center;
+}
+
+.destination-detail-container h3{
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.destination-detail-container h2{
+    font-size: 14px;
+    font-style: italic;
+    text-align:center;
+    margin-bottom: 12px;
+}
+
+.destination-detail-container img{
+    width: 50%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.destination-detail-container p{
+    font-size: 14px;
+    text-align : justify;
+}
+
+/* account.html */
+.account{
+    margin: 80px 70px 80px;
+}
+
+.account h1{
+    margin-bottom: 10px;
+}
+
+.account-access{
+    float: left;
+    margin-right: 100px;
+}
+
+.account-access input{
+    border-bottom: 1px solid;
+}
+
+.account-access button{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 135px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.account-access a{
+    font-size: 12px;
+}
+
+.account-creation{
+    border-color: var(--grey);
+}
+
+.account-creation button{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 135px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* create-account.html */
+.create-account{
+    margin: 80px 70px 80px;
+}
+
+/* cart.html */
+.cart{
+   margin: 80px 70px 80px;
+}
+.empty-cart h1{
+    margin-bottom: 20px;
+}
+
+.empty-cart a{
+    font-size:14px;
+    padding: 5px;
+    width: 100%;
+    height: 13rem;
+    border: 1px solid;
+    border-color: var(--grey);
+    transition: 0.3s;
+    border-radius: 1px;
+}
+
+.cart-content {
+    height: 120px;
+}
+.cart-content img{
+    width: 6%;
+    height: 6%;
+    float: left;
+    margin-right: 20px;
+}
+
+.cart-content h1 {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.cart-content:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.update-quantities-btn{
+    border: 0.5px solid;
+    border-color: var(--black);
+    padding: 3px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.continue-btn{
+    border: 0.5px solid;
+    border-color: var(--black);
+    padding: 3px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background: var(--dark-grey);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+    float: right;
+}
+
+/* checkout_success.html */
+.success-checkout{
+    margin: 80px 70px 80px;
+}
+
+/* password_reset.html */
+.container-password-reset{
+    margin: 80px 70px 80px;
+}
+
+.form-buttons input{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 60px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.form-buttons a{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 70px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.form{
+    padding: 1px;
+    width: 700px;
+}
+
+/* password_reset_complete.html */
+.container-password-complete{
+    margin: 80px 70px 80px;
+}
+
+.container-password-complete p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.container-password-complete a{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 50px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* password_reset_done.html */
+
+.container-password-reset-done{
+    margin: 80px 70px 80px;
+}
+
+.container-password-reset-done p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.container-password-reset-done a{
+    border: 0.5px solid;
+    padding: 3px;
+    width: 50px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* password_reset_email.html */
+
+.container-password-reset-done{
+    margin: 80px 70px 80px;
+}
+
+/* profile.html */
+.container-profile{
+    margin: 80px 70px 80px;
+}
+
+/* password_reset_confirm.html */
+.container-password_reset_confirm{
+    margin: 80px 70px 80px;
+    color: var(--black);
+}
+
+.container-password_reset_confirm button{
+    border: 0.5px solid;
+    padding: 2px;
+    width: 110px;
+    background: var(--light-grey);
+    color: var(--black);
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.container-password_reset_confirm p{
+    margin-top: 15px;
+    font-size: 12px;
+}
